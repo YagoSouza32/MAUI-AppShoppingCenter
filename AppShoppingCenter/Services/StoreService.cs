@@ -1,5 +1,6 @@
 ﻿using AppShoppingCenter.Models;
 using AppShoppingCenter.Models.Enums;
+using static System.Net.WebRequestMethods;
 
 namespace AppShoppingCenter.Services;
 
@@ -38,7 +39,7 @@ public class MockStoreService
                 Phone = "(61) 3154-1234",
                 Type = EEstablishmentType.Store,
 
-                Logo = "https://gsobmidia.com.br/uploads/lojas/1587/any-any_1607606261.png",
+                Logo = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRiNxt--__ORB7tGiqW1n5ngNfGyrkxpHcH7A&s",
                 Cover = "https://th.bing.com/th/id/R.3e7fcd5a62c507e0fe520211dc4da74e?rik=EVnAQuH8VECIyQ&riu=http%3a%2f%2f3.bp.blogspot.com%2f-OINRmqrcATk%2fVSepgubwKfI%2fAAAAAAAAL8Q%2fg_kjz4q1Owc%2fs1600%2fany_any_franquia.jpg&ehk=4BVqFRPzznt5pjxTpqgmiaXrWVjyv7uHZqsHG8OeMZk%3d&risl=&pid=ImgRaw&r=0"
             },
             new Establishment
@@ -74,7 +75,7 @@ public class MockStoreService
                 Phone = "(61) 3154-4153",
                 Type = EEstablishmentType.Store,
 
-                Logo = "https://brossman.com.br/wp-content/uploads/2021/10/cropped-dg-coin-brossman-1.png",
+                Logo = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTW2eYec82Xhaul3ghGzBGgMtpfZaBrpJxz_g&s",
                 Cover = "https://photos.wikimapia.org/p/00/02/58/51/10_big.jpg"
             },
             new Establishment
@@ -110,7 +111,7 @@ public class MockStoreService
                 Phone = "(61) 3679-153",
                 Type = EEstablishmentType.Store,
 
-                Logo = "https://cuponomia-a.akamaihd.net/img/stores/original/casas-bahia-637628912275644345.png",
+                Logo = "https://www.caruarushopping.com/wp-content/uploads/2019/09/Casas-Bahia.jpg",
                 Cover = "https://s2.glbimg.com/XO8XarHm4uZKPbyxNFpyE8JZlW0=/0x89:2048x1357/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_63b422c2caee4269b8b34177e8876b93/internal_photos/bs/2019/9/U/vyuTqHROC6j9Q6k7wRbg/19158185353-556b98ef7e-k.jpg"
             },
 
@@ -171,7 +172,7 @@ public class MockStoreService
                 Phone = "-",
 
                 Type = EEstablishmentType.Store,
-                Logo = "https://static.pelando.com.br/live/merchants/avatar_web_square_94_2x/avatar/275_3.jpg",
+                Logo = "https://upload.wikimedia.org/wikipedia/commons/8/8a/Logo_americanas.png",
                 Cover = "https://th.bing.com/th/id/R.1f226d5f8aa941c3331ad54e050e542a?rik=Dyc%2bMw0eVGpc2A&pid=ImgRaw&r=0"
             },
             new Establishment()
@@ -255,8 +256,8 @@ public class MockStoreService
                 Phone = "(61) 3471-8600",
                 Type = EEstablishmentType.Store,
 
-                Logo = "https://vagasabertas.org/wp-content/uploads/2012/03/Vagas-de-Emprego-na-empresa-Fujioka.jpg",
-                Cover = "https://www.parkshopping.com.br/sites/pks/files/lojas/fujioka.jpg"
+                Logo = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTL03Vos8mQhXYK28XTMfvFBAcIvKvpJQsUrA&s",
+                Cover = "https://uploads.metroimg.com/wp-content/uploads/2022/09/01101045/Fujioka-4.jpg"
             },
             new Establishment()
             {
@@ -267,8 +268,8 @@ public class MockStoreService
                 Phone = "(61) 3475-2419",
                 Type = EEstablishmentType.Store,
 
-                Logo = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTiRokiv_4pZyS25L8XL6Bd1ltaMtyv8loON_EwHwB1odjIY6lf_Ea9kb6qLKFoGmKIlUc&usqp=CAU",
-                Cover = "https://www.abcdacomunicacao.com.br/wp-content/uploads/Quem-disse-Berenice_logo-500x375.png"
+                Logo = "https://deborapsicologa.com.br/wp-content/uploads/2015/09/Quem-disse-Berenice.png",
+                Cover = "https://www.riomarrecife.com.br/storage/stores/vitrine_368.jpg"
             },
             new Establishment()
             {
@@ -315,7 +316,7 @@ public class MockStoreService
                 Phone = "(61) 3053-8009",
                 Type = EEstablishmentType.Store,
 
-                Logo = "https://th.bing.com/th/id/OIP.8Apu8unhr4A8enO5vgxF6gHaHa?pid=Api&rs=1",
+                Logo = "https://www.riomarrecife.com.br/storage/stores/marca_648.jpg",
                 Cover = "https://s2.glbimg.com/9bW5xeF2TzgK6yrJ2IQF_gCMv2k=/e.glbimg.com/og/ed/f/original/2020/08/17/foto_materia_loa_01.jpg"
             },
             new Establishment()

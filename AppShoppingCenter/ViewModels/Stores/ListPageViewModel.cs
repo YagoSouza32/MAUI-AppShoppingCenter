@@ -35,4 +35,14 @@ public partial class ListPageViewModel : ObservableObject
             .Where(e => e.Name.Contains(value, StringComparison.OrdinalIgnoreCase))
             .ToList();
     }
+
+    [RelayCommand]
+    private async void OnTapEstablishmentGoToDetailPage(Establishment establishment)
+    {
+        var navigationParameter = new Dictionary<string, object>
+        {
+            { "establishment", establishment }
+        };
+        await Shell.Current.GoToAsync("detail", navigationParameter);
+    }
 }
