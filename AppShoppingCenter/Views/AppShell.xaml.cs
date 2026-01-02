@@ -7,8 +7,9 @@ namespace AppShoppingCenter
         public AppShell()
         {
             InitializeComponent();
-
-            Routing.RegisterRoute("stores/detail", typeof(Views.Stores.DetailPage));
+                        
+            Routing.RegisterRoute("detail", typeof(Views.Stores.DetailPage));
+            Routing.RegisterRoute("cinemas/detail", typeof(Views.Cinemas.DetailPage));
         }
     }
 }

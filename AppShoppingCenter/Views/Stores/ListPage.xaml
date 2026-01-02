@@ -27,7 +27,11 @@
             <Entry Placeholder="Pesquisar por loja" Text="{Binding TextSearch}" />
         </Border>
 
-        <CollectionView Grid.Row="1" ItemsSource="{Binding EstablishmentsFiltered}">
+        <CollectionView
+            Grid.Row="1"
+            EmptyView="Nenhum registro encontrado!"
+            ItemsSource="{Binding EstablishmentsFiltered}"
+            VerticalOptions="Start">
             <CollectionView.ItemTemplate>
                 <DataTemplate>
 
@@ -47,6 +51,7 @@
                         <Label
                             Grid.Column="1"
                             Margin="5"
+                            Style="{StaticResource PrimaryText}"
                             Text="{Binding Name}" />
 
                         <Label

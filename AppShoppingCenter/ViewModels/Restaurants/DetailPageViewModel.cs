@@ -2,7 +2,7 @@
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 
-namespace AppShoppingCenter.ViewModels.Stores;
+namespace AppShoppingCenter.ViewModels.Restaurants;
 
 [QueryProperty(nameof(Establishment), "establishment")]
 public partial class DetailPageViewModel : ObservableObject

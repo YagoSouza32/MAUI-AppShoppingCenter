@@ -21,9 +21,11 @@ namespace AppShoppingCenter
                 });
 
             builder.Services.AddSingleton<StoreService>();
+            builder.Services.AddSingleton<RestaurantService>();
+            builder.Services.AddSingleton<CinemaService>();
 
 #if DEBUG
-    		builder.Logging.AddDebug();
+            builder.Logging.AddDebug();
 #endif
 
             return builder.Build();

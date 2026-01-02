@@ -12,7 +12,6 @@ namespace AppShoppingCenter.Models
         public EEstablishmentType Type { get; set; }
         public string Cover { get; set; } = string.Empty;
         public string Logo { get; set; } = string.Empty;
-
    
     }
 }
