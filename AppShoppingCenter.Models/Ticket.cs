@@ -3,7 +3,7 @@
     public class Ticket
     {
         public int Id { get; set; }
-        public string TicketNuber { get; set; } = string.Empty;        
+        public string TicketNumber { get; set; } = string.Empty;        
         public DateTimeOffset DateIn { get; set; }
         public DateTimeOffset DateOut { get; set; }
         public DateTimeOffset DateTolerance { get; set; }
