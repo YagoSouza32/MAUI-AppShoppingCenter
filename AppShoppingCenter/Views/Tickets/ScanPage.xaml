@@ -18,7 +18,7 @@
                         <FormattedString.Spans>
                             <Span Style="{StaticResource HeadingText01}">Pague o seu&#x0a;</Span>
                             <Span Text="{x:Static system:Environment.NewLine}" />
-                            <Span Style="{StaticResource HeadingText01}">ESTACIONAMENTO</Span>
+                            <Span Style="{StaticResource HeadingText02}">ESTACIONAMENTO</Span>
                         </FormattedString.Spans>
                     </FormattedString>
                 </Label.FormattedText>
