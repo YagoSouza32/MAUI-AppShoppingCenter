@@ -62,7 +62,7 @@
                             <FormattedString>
                                 <FormattedString.Spans>
                                     <Span Text="Entrada: " />
-                                    <Span Text="{Binding Ticket.DateIn}" />
+                                    <Span Text="{Binding Ticket.DateIn, StringFormat='{0:dd/MM/yyyy hh:mm}'}" />
                                 </FormattedString.Spans>
                             </FormattedString>
                         </Label.FormattedText>
@@ -73,7 +73,7 @@
                             <FormattedString>
                                 <FormattedString.Spans>
                                     <Span Text="Saída: " />
-                                    <Span Text="{Binding Ticket.DateOut}" />
+                                    <Span Text="{Binding Ticket.DateOut, StringFormat='{0:dd/MM/yyyy hh:mm}'}" />
                                 </FormattedString.Spans>
                             </FormattedString>
                         </Label.FormattedText>
@@ -100,22 +100,26 @@
                     <Label Text="PIX" />
                     <Label Style="{StaticResource SecondaryText}" Text="QR Code" />
 
-                    <zxing:BarcodeGeneratorView
-                        Margin="3"
-                        ForegroundColor="Black"
-                        Format="QrCode"
-                        HeightRequest="200"
-                        SemanticProperties.Hint="QRCode de Pagamento por Pix"
-                        WidthRequest="200"
-                        Value="00020126360014BR.GOV.BCB.PIX0114+5561999.." />
+                    <Border MaximumHeightRequest="300" StrokeThickness="0">
+                        <zxing:BarcodeGeneratorView
+                            Margin="3"
+                            ForegroundColor="Black"
+                            Format="QrCode"
+                            HeightRequest="200"
+                            SemanticProperties.Hint="QRCode de Pagamento por Pix"
+                            WidthRequest="200"
+                            Value="{Binding PixCode}" />
+
+                    </Border>
                     <Label Style="{StaticResource SecondaryText}" Text="Copie e cole" />
 
                     <Border Style="{StaticResource BorderStyle}">
-                        <Entry IsReadOnly="True" Text="00020126360014BR.GOV.BCB.PIX0114+55739992226455204000053039865406100.005802BR5917Yago Souza Santos6009Eunapolis62070503***63047638" />
+                        <Entry IsReadOnly="True" Text="{Binding PixCode}" />
                     </Border>
 
                     <Button
                         Margin="0,10,0,0"
+                        Command="{Binding CopyAndPasteCommand}"
                         Style="{StaticResource PrimaryButtonStyle}"
                         Text="Copiar e colar" />
                 </VerticalStackLayout>

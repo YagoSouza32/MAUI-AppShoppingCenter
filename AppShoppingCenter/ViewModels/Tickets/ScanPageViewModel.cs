@@ -6,7 +6,7 @@ namespace AppShoppingCenter.ViewModels.Tickets;
 public partial class ScanPageViewModel : ObservableObject
 {
     [ObservableProperty]
-    private string ticketNumber;
+    private string ticketNumber = "209883557324";
 
 
     [RelayCommand]
