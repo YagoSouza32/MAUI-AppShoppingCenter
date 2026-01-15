@@ -27,8 +27,27 @@ public class TicketService
                 Id = 2,
                 TicketNumber = "320683687451",
                 DateIn = new DateTimeOffset(2023, 06, 01, 15, 00, 00, TimeSpan.FromHours(-3)),
+            },
+            new Ticket()
+            {
+                Id = 3,
+                TicketNumber = "487920154638",
+                DateIn = new DateTimeOffset(2023, 06, 01, 17, 30, 00, TimeSpan.FromHours(-3)),
+            },
+            new Ticket()
+            {
+                Id = 4,
+                TicketNumber = "598374620115",
+                DateIn = new DateTimeOffset(2023, 06, 01, 19, 45, 00, TimeSpan.FromHours(-3)),
+            },
+            new Ticket()
+            {
+                Id = 5,
+                TicketNumber = "731059284677",
+                DateIn = new DateTimeOffset(2023, 06, 01, 21, 10, 00, TimeSpan.FromHours(-3)),
             }
         };
+
         public static Ticket GetTicket(string ticketNumber)
         {
             return tickets.FirstOrDefault(a => a.TicketNumber == ticketNumber.Replace(" ", string.Empty));
