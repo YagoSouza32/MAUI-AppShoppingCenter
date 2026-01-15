@@ -1,4 +1,5 @@
-﻿using AppShoppingCenter.Models;
+﻿using AppShoppingCenter.Libraries.Storages;
+using AppShoppingCenter.Models;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 
@@ -23,7 +24,6 @@ public partial class PayPageViewModel : ObservableObject
             SetProperty(ref ticket, value);
         }
     }
-
     private void GenerateDateOutAndTolerance(Ticket ticket)
     {
         var random = new Random();
@@ -33,7 +33,6 @@ public partial class PayPageViewModel : ObservableObject
         ticket.DateOut = ticket.DateIn.AddHours(hour).AddMinutes(minute);
         ticket.DateTolerance = ticket.DateOut.AddMinutes(30);
     }
-
     private void GeneratePrice(Ticket ticket)
     {
         var dif = ticket.DateOut.Ticks - ticket.DateIn.Ticks;
@@ -48,7 +47,11 @@ public partial class PayPageViewModel : ObservableObject
         await Clipboard.Default.SetTextAsync(PixCode);
         
         //simular pagamento
-        await Task.Delay(5000);
+        await Task.Delay(2000);
+
+        var storage = App.Current.Handler.MauiContext.Services.GetService<TicketPreferenceStorage>();
+       
+        storage.Save(Ticket);
 
         var param = new Dictionary<string, object>
         {

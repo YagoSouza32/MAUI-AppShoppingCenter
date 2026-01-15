@@ -62,7 +62,7 @@
                             <FormattedString>
                                 <FormattedString.Spans>
                                     <Span Text="Entrada: " />
-                                    <Span Text="{Binding Ticket.DateIn, StringFormat='{0:dd/MM/yyyy hh:mm}'}" />
+                                    <Span Text="{Binding Ticket.DateIn, StringFormat='{0:dd/MM/yyyy HH:mm}'}" />
                                 </FormattedString.Spans>
                             </FormattedString>
                         </Label.FormattedText>
@@ -73,7 +73,7 @@
                             <FormattedString>
                                 <FormattedString.Spans>
                                     <Span Text="Saída: " />
-                                    <Span Text="{Binding Ticket.DateOut, StringFormat='{0:dd/MM/yyyy hh:mm}'}" />
+                                    <Span Text="{Binding Ticket.DateOut, StringFormat='{0:dd/MM/yyyy HH:mm}'}" />
                                 </FormattedString.Spans>
                             </FormattedString>
                         </Label.FormattedText>

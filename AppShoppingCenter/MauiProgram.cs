@@ -1,4 +1,5 @@
-﻿using AppShoppingCenter.Services;
+﻿using AppShoppingCenter.Libraries.Storages;
+using AppShoppingCenter.Services;
 using CommunityToolkit.Maui;
 using Microsoft.Extensions.Logging;
 using ZXing.Net.Maui.Controls;
@@ -22,6 +23,7 @@ namespace AppShoppingCenter
                     fonts.AddFont("OpenSans-Bold.ttf", "OpenSansBold");
                 });
 
+            builder.Services.AddSingleton<TicketPreferenceStorage>();
             builder.Services.AddSingleton<StoreService>();
             builder.Services.AddSingleton<RestaurantService>();
             builder.Services.AddSingleton<CinemaService>();
