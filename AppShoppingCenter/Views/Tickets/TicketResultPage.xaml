@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="AppShoppingCenter.Views.Tickets.TicketResultPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:converters="clr-namespace:AppShoppingCenter.Libraries.Converters"
+    xmlns:vm="clr-namespace:AppShoppingCenter.ViewModels.Tickets"
+    Title="Voltar">
+    <ContentPage.BindingContext>
+        <vm:TicketResultViewModel />
+    </ContentPage.BindingContext>
+    <ContentPage.Resources>
+        <converters:TimeSpanToTimeStringConverter x:Key="TimeSpanToTimeStringConverter" />
+    </ContentPage.Resources>
+    <ScrollView>
+        <Grid Padding="20" RowDefinitions="auto,auto,auto,auto,auto,auto">
+
+            <Label
+                Grid.Row="0"
+                SemanticProperties.HeadingLevel="Level1"
+                Style="{StaticResource HeadingText02}"
+                Text="ESTACIONAMENTO" />
+
+            <Border
+                Grid.Row="1"
+                Margin="0,40,0,0"
+                Padding="20"
+                Style="{StaticResource BorderDotStyle}">
+                <VerticalStackLayout Spacing="4">
+                    <Label SemanticProperties.HeadingLevel="Level2">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <FormattedString.Spans>
+                                    <Span Text="Ticket #" />
+                                    <Span Text="{Binding Ticket.TicketNumber}" />
+                                </FormattedString.Spans>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                    <Label Margin="0,15,0,0">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <FormattedString.Spans>
+                                    <Span Style="{StaticResource SecondaryText}" Text="Permanência: " />
+                                    <Span Style="{StaticResource SecondaryText}" Text="{Binding Ticket, Converter={StaticResource TimeSpanToTimeStringConverter}}" />
+                                </FormattedString.Spans>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                    <Label>
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <FormattedString.Spans>
+                                    <Span Style="{StaticResource SecondaryText}" Text="Entrada: " />
+                                    <Span Style="{StaticResource SecondaryText}" Text="{Binding Ticket.DateIn, StringFormat='{0:dd/MM/yyyy HH:mm}'}" />
+                                </FormattedString.Spans>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                    <Label>
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <FormattedString.Spans>
+                                    <Span Style="{StaticResource SecondaryText}" Text="Saída: " />
+                                    <Span Style="{StaticResource SecondaryText}" Text="{Binding Ticket.DateOut, StringFormat='{0:dd/MM/yyyy HH:mm}'}" />
+                                </FormattedString.Spans>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                    <Label>
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <FormattedString.Spans>
+                                    <Span
+                                        FontFamily="OpenSansBold"
+                                        Style="{StaticResource DetailText}"
+                                        Text="Valor: " />
+                                    <Span
+                                        FontFamily="OpenSansBold"
+                                        Style="{StaticResource DetailText}"
+                                        Text="{Binding Ticket.Price, StringFormat='{0:C}'}" />
+                                </FormattedString.Spans>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                </VerticalStackLayout>
+            </Border>
+
+            <Label
+                Grid.Row="2"
+                Margin="0,40,0,0"
+                HorizontalOptions="Center"
+                SemanticProperties.HeadingLevel="Level2"
+                Style="{StaticResource SuccessText}"
+                Text="Pagamento aprovado" />
+
+            <Label
+                Grid.Row="3"
+                Margin="0,30,0,0"
+                HorizontalOptions="Center"
+                Style="{StaticResource ToleranceText}"
+                Text="Tolerância" />
+
+            <Label Grid.Row="4" HorizontalOptions="Center">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Style="{StaticResource ToleranceMinutesText}" Text="{Binding Tolerance}" />
+                        <Span Style="{StaticResource ToleranceMinutesText}" Text=" min" />
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+
+            <Label Grid.Row="5" HorizontalOptions="Center">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Style="{StaticResource SecondaryText}" Text="até " />
+                        <Span Style="{StaticResource SecondaryText}" Text="{Binding Ticket.DateTolerance, StringFormat='{0:HH:mm}'}" />
+                        <Span Style="{StaticResource SecondaryText}" Text=" min" />
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+
+        </Grid>
+    </ScrollView>
+</ContentPage>

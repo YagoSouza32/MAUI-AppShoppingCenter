@@ -8,14 +8,14 @@ namespace AppShoppingCenter
         {
             InitializeComponent();
                         
-            Routing.RegisterRoute("detail", typeof(Views.Stores.DetailPage));
+            Routing.RegisterRoute("detail", typeof(Views.Stores.EstablishmentDetailPage));
             
-            Routing.RegisterRoute("cinemas/detail", typeof(Views.Cinemas.DetailPage));
+            Routing.RegisterRoute("cinemas/detail", typeof(Views.Cinemas.CinemaDetailPage));
             
-            Routing.RegisterRoute("tickets/pay", typeof(Views.Tickets.PayPage));
-            Routing.RegisterRoute("tickets/list", typeof(Views.Tickets.ListPage));
-            Routing.RegisterRoute("tickets/result", typeof(Views.Tickets.ResultPage));
-            Routing.RegisterRoute("tickets/camera", typeof(Views.Tickets.CameraPage));
+            Routing.RegisterRoute("tickets/pay", typeof(Views.Tickets.TicketPayPage));
+            Routing.RegisterRoute("tickets/list", typeof(Views.Tickets.TicketListPage));
+            Routing.RegisterRoute("tickets/result", typeof(Views.Tickets.TicketResultPage));
+            Routing.RegisterRoute("tickets/camera", typeof(Views.Tickets.TicketCameraPage));
         }
     }
 }

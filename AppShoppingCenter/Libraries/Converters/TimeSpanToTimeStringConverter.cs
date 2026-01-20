@@ -1,4 +1,4 @@
-﻿using AppShoppingCenter.Models;
+﻿using AppShoppingCenter.Models.Entities;
 using System.Globalization;
 
 namespace AppShoppingCenter.Libraries.Converters;

@@ -70,50 +70,70 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Folder Include="Models\" />
-	  <Folder Include="ViewModels\Authentications\" />
-	  <Folder Include="Views\Authentications\" />
-	</ItemGroup>
-
-	<ItemGroup>
-	  <ProjectReference Include="..\AppShoppingCenter.Models\AppShoppingCenter.Models.csproj" />
+	  <Compile Update="Views\Cinemas\CinemaListPage.xaml.cs">
+	    <DependentUpon>CinemaListPage.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Views\Cinemas\CinemaDetailPage.xaml.cs">
+	    <DependentUpon>CinemaDetailPage.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Views\Establishment\EstablishmentDetailPage.xaml.cs">
+	    <DependentUpon>EstablishmentDetailPage.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Views\Restaurants\RestaurantListPage.xaml.cs">
+	    <DependentUpon>RestaurantListPage.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Views\Stores\StoreListPage.xaml.cs">
+	    <DependentUpon>StoreListPage.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Views\Tickets\TicketListPage.xaml.cs">
+	    <DependentUpon>TicketListPage.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Views\Tickets\TicketResultPage.xaml.cs">
+	    <DependentUpon>TicketResultPage.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Views\Tickets\TicketPayPage.xaml.cs">
+	    <DependentUpon>TicketPayPage.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Views\Tickets\TicketCameraPage.xaml.cs">
+	    <DependentUpon>TicketCameraPage.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Views\Tickets\TicketScanPage.xaml.cs">
+	    <DependentUpon>TicketScanPage.xaml</DependentUpon>
+	  </Compile>
 	</ItemGroup>
 
 	<ItemGroup>
 	  <MauiXaml Update="Resources\Styles\ExplicitStyles.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Views\Cinemas\DetailPage.xaml">
+	  <MauiXaml Update="Views\Cinemas\CinemaDetailPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Views\Cinemas\ListPage.xaml">
+	  <MauiXaml Update="Views\Cinemas\CinemaListPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Views\Restaurants\DetailPage.xaml">
+	  <MauiXaml Update="Views\Restaurants\RestaurantListPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Views\Restaurants\ListPage.xaml">
+	  <MauiXaml Update="Views\Establishment\EstablishmentDetailPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Views\Establishment\DetailPage.xaml">
+	  <MauiXaml Update="Views\Stores\StoreListPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Views\Stores\ListPage.xaml">
+	  <MauiXaml Update="Views\Tickets\TicketCameraPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Views\Tickets\CameraPage.xaml">
+	  <MauiXaml Update="Views\Tickets\TicketListPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Views\Tickets\ListPage.xaml">
+	  <MauiXaml Update="Views\Tickets\TicketPayPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Views\Tickets\PayPage.xaml">
+	  <MauiXaml Update="Views\Tickets\TicketResultPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Views\Tickets\ResultPage.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Views\Tickets\ScanPage.xaml">
+	  <MauiXaml Update="Views\Tickets\TicketScanPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	</ItemGroup>

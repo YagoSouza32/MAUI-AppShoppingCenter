@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="AppShoppingCenter.Views.Tickets.TicketScanPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:mct="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+    xmlns:system="clr-namespace:System;assembly=netstandard"
+    xmlns:vm="clr-namespace:AppShoppingCenter.ViewModels.Tickets"
+    Title="Tickets">
+
+    <ScrollView>
+        <Grid Padding="25" RowDefinitions="auto,auto,*">
+            <Label Grid.Row="0">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <FormattedString.Spans>
+                            <Span Style="{StaticResource HeadingText01}">Pague o seu&#x0a;</Span>
+                            <Span Text="{x:Static system:Environment.NewLine}" />
+                            <Span Style="{StaticResource HeadingText02}">ESTACIONAMENTO</Span>
+                        </FormattedString.Spans>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+
+            <Border
+                Grid.Row="1"
+                Margin="0,50,0,0"
+                Style="{StaticResource BorderStyle}">
+
+                <Border.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding ScanCommand}" />
+                </Border.GestureRecognizers>
+
+                <Grid
+                    Padding="0,0,10,0"
+                    ColumnDefinitions="*,auto"
+                    RowDefinitions="*">
+                    <Entry
+                        Grid.Column="0"
+                        Keyboard="Numeric"
+                        Placeholder="Escanear ticket"
+                        Text="{Binding TicketNumber}">
+
+                        <Entry.Behaviors>
+                            <mct:EventToCommandBehavior Command="{Binding CheckTicketNumberCommand}" EventName="Completed" />
+                            <mct:MaskedBehavior Mask="XXX XXX XXX XXX" />
+                        </Entry.Behaviors>
+                    </Entry>
+                    <Image
+                        Grid.Column="1"
+                        Source="camera.png"
+                        VerticalOptions="Center">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding ScanCommand}" />
+                        </Image.GestureRecognizers>
+                    </Image>
+                </Grid>
+            </Border>
+
+            <VerticalStackLayout
+                Grid.Row="2"
+                Spacing="5"
+                VerticalOptions="End">
+                <Button
+                    Command="{Binding CheckTicketNumberCommand}"
+                    Style="{StaticResource PrimaryButtonStyle}"
+                    Text="Buscar Código" />
+                <Button
+                    Command="{Binding ListCommand}"
+                    Style="{StaticResource SecondaryButtonStyle}"
+                    Text="Tickets pagos" />
+            </VerticalStackLayout>
+        </Grid>
+    </ScrollView>
+
+</ContentPage>

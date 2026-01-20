@@ -1,4 +1,4 @@
-﻿using AppShoppingCenter.Models;
+﻿using AppShoppingCenter.Models.Entities;
 using System.Text.Json;
 
 namespace AppShoppingCenter.Libraries.Storages;
