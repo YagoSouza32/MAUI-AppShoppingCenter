@@ -1,5 +1,4 @@
 ﻿using AppShoppingCenter.Configurations;
-using AppShoppingCenter.Libraries.Storages;
 using CommunityToolkit.Maui;
 using Microsoft.Extensions.Logging;
 using ZXing.Net.Maui.Controls;
@@ -26,7 +25,7 @@ namespace AppShoppingCenter
             builder.Services.AddServiceConfiguration();
             builder.Services.AddPageConfiguration();
             builder.Services.AddViewModelConfiguration();
-            builder.Services.AddSingleton<TicketPreferenceStorage>();
+            builder.Services.AddStorageConfiguration();           
             
 
 #if DEBUG

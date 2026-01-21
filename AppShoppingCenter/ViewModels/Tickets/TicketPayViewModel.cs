@@ -1,4 +1,4 @@
-﻿using AppShoppingCenter.Libraries.Storages;
+﻿using AppShoppingCenter.Libraries.Storages.Interfaces;
 using AppShoppingCenter.Models.Entities;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
@@ -8,7 +8,7 @@ namespace AppShoppingCenter.ViewModels.Tickets;
 [QueryProperty(nameof(Ticket), "ticket")]
 public partial class TicketPayViewModel : ObservableObject
 {
-    private readonly TicketPreferenceStorage _ticketPreferenceStorage;
+    private readonly ITicketStorage _ticketStorage;
 
     private double HourValue = 0.07;
 
@@ -27,9 +27,9 @@ public partial class TicketPayViewModel : ObservableObject
         }
     }
 
-    public TicketPayViewModel(TicketPreferenceStorage ticketPreferenceStorage)
+    public TicketPayViewModel(ITicketStorage ticketStorage)
     {
-        _ticketPreferenceStorage = ticketPreferenceStorage;
+        _ticketStorage = ticketStorage;
     }
 
     private void GenerateDateOutAndTolerance(Ticket ticket)
@@ -57,12 +57,12 @@ public partial class TicketPayViewModel : ObservableObject
 
         await Task.Delay(2000);
 
-        _ticketPreferenceStorage.Save(Ticket);
+        _ticketStorage.Save(Ticket);
 
         var param = new Dictionary<string, object>
-    {
-        { "ticket", Ticket }
-    };
+        {
+            { "ticket", Ticket }
+        };
 
         await Shell.Current.GoToAsync("tickets/result", param);
     }

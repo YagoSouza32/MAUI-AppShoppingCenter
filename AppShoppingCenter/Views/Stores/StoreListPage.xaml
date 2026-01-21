@@ -20,7 +20,10 @@
                 </LinearGradientBrush>
             </Border.Stroke>
 
-            <Entry Placeholder="Pesquisar por loja" Text="{Binding TextSearch}" />
+            <Entry
+                Placeholder="Pesquisar por loja"
+                SemanticProperties.Hint="Digite para pesquisar pelo nome da loja"
+                Text="{Binding TextSearch}" />
         </Border>
 
         <CollectionView
@@ -43,11 +46,13 @@
                         <Image
                             Grid.RowSpan="2"
                             Margin="0,0,15,0"
+                            SemanticProperties.Hint="{Binding UpdateSourceEventName, StringFormat='Logotipo da loja {0}'}"
                             Source="{Binding Logo}" />
 
                         <Label
                             Grid.Column="1"
                             Margin="5"
+                            SemanticProperties.HeadingLevel="Level1"
                             Style="{StaticResource PrimaryText}"
                             Text="{Binding Name}" />
 

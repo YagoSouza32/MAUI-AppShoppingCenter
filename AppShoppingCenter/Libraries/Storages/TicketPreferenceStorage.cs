@@ -1,39 +1,32 @@
-﻿using AppShoppingCenter.Models.Entities;
+﻿using AppShoppingCenter.Libraries.Storages.Interfaces;
+using AppShoppingCenter.Models.Entities;
 using System.Text.Json;
 
 namespace AppShoppingCenter.Libraries.Storages;
 
-public class TicketPreferenceStorage
+public class TicketPreferenceStorage : ITicketStorage
 {
-    private readonly string key = "ticket";
+    private const string Key = "ticket";
 
     public void Save(Ticket ticket)
     {
-        List<Ticket> tickets;
-
-        if (Preferences.Default.ContainsKey(key))
-        {
-            var ticketsStr = Preferences.Default.Get<string>(key, string.Empty);
-            tickets = JsonSerializer.Deserialize<List<Ticket>>(ticketsStr);
-        }else
-        {
-            tickets = new List<Ticket>();
-        }
-        
+        var tickets = Load();
         tickets.Add(ticket);
-        
-        Preferences.Clear();   
-        Preferences.Default.Set(key, JsonSerializer.Serialize(tickets));
+
+        Preferences.Default.Set(Key, JsonSerializer.Serialize(tickets));
     }
+
     public List<Ticket> Load()
     {
-        if (Preferences.Default.ContainsKey(key))
-        {
-            var ticketsStr = Preferences.Default.Get<string>(key, string.Empty);
-            var tickets = JsonSerializer.Deserialize<List<Ticket>>(ticketsStr);
-            return tickets;
-        }
+        if (!Preferences.Default.ContainsKey(Key))
+            return new List<Ticket>();
 
-        return new List<Ticket>();
+        var ticketsStr = Preferences.Default.Get(Key, string.Empty);
+
+        if (string.IsNullOrWhiteSpace(ticketsStr))
+            return new List<Ticket>();
+
+        return JsonSerializer.Deserialize<List<Ticket>>(ticketsStr)
+               ?? new List<Ticket>();
     }
 }

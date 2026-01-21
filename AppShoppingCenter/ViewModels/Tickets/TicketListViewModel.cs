@@ -1,4 +1,4 @@
-﻿using AppShoppingCenter.Libraries.Storages;
+﻿using AppShoppingCenter.Libraries.Storages.Interfaces;
 using AppShoppingCenter.Models.Entities;
 using CommunityToolkit.Mvvm.ComponentModel;
 
@@ -6,14 +6,14 @@ namespace AppShoppingCenter.ViewModels.Tickets;
 
 public partial class TicketListViewModel : ObservableObject
 {
-    private readonly TicketPreferenceStorage _ticketPreferenceStorage;
+    private readonly ITicketStorage _ticketStorage;
 
     [ObservableProperty]
     private List<Ticket> tickets;
 
-    public TicketListViewModel(TicketPreferenceStorage ticketPreferenceStorage)
+    public TicketListViewModel(ITicketStorage ticketStorage)
     {
-        _ticketPreferenceStorage = ticketPreferenceStorage;
-        Tickets = _ticketPreferenceStorage.Load();
+        _ticketStorage = ticketStorage;
+        Tickets = _ticketStorage.Load();
     }
 }
