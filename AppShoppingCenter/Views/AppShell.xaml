@@ -7,7 +7,12 @@
     xmlns:restaurants="clr-namespace:AppShoppingCenter.Views.Restaurants"
     xmlns:stores="clr-namespace:AppShoppingCenter.Views.Stores"
     xmlns:tickets="clr-namespace:AppShoppingCenter.Views.Tickets"
-    Title="AppShoppingCenter">
+    Title="AppShoppingCenter"
+    ForegroundColor="{AppThemeBinding Light={StaticResource Gray950},
+                                      Dark={StaticResource Gray200}}"
+    TitleColor="{AppThemeBinding Light={StaticResource Gray950},
+                                 Dark={StaticResource Gray200}}">
+
 
     <TabBar>
         <ShellContent

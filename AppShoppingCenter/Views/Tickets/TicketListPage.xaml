@@ -26,7 +26,10 @@
             </Label.FormattedText>
         </Label>
 
-        <CollectionView Grid.Row="1" ItemsSource="{Binding Tickets}">
+        <CollectionView
+            Grid.Row="1"
+            EmptyView="Nenhum registro"
+            ItemsSource="{Binding Tickets}">
             <CollectionView.ItemTemplate>
                 <DataTemplate>
                     <Border

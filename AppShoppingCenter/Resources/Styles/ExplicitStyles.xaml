@@ -8,7 +8,7 @@
         <Setter Property="FontSize" Value="14" />
         <Setter Property="TextTransform" Value="Uppercase" />
         <Setter Property="FontFamily" Value="OpenSansBold" />
-        <Setter Property="TextColor" Value="#000000" />
+        <Setter Property="TextColor" Value="{AppThemeBinding Light='#000000', Dark={StaticResource Gray200}}" />
     </Style>
 
     <Style x:Key="SecondaryText" TargetType="Label">
@@ -18,22 +18,22 @@
     </Style>
 
     <Style x:Key="TercearyText" TargetType="Label">
-        <Setter Property="FontSize" Value="12" />
+        <Setter Property="FontSize" Value="14" />
         <Setter Property="FontFamily" Value="OpenSansRegular" />
-        <Setter Property="TextColor" Value="#404040" />
+        <Setter Property="TextColor" Value="{AppThemeBinding Light='#404040', Dark={StaticResource Gray200}}" />
     </Style>
 
     <Style x:Key="HeadingText" TargetType="Label">
         <Setter Property="FontSize" Value="14" />
         <Setter Property="FontFamily" Value="OpenSansBold" />
-        <Setter Property="TextColor" Value="#000000" />
+        <Setter Property="TextColor" Value="{AppThemeBinding Light='#000000', Dark={StaticResource Gray200}}" />
     </Style>
 
 
     <Style x:Key="DetailText" TargetType="Label">
         <Setter Property="FontSize" Value="12" />
         <Setter Property="FontFamily" Value="OpenSansRegular" />
-        <Setter Property="TextColor" Value="#000000" />
+        <Setter Property="TextColor" Value="{AppThemeBinding Light='#000000', Dark={StaticResource Gray200}}" />
     </Style>
 
     <Style x:Key="DurationText" TargetType="Label">
@@ -50,7 +50,7 @@
         x:Key="HeadingText01"
         BasedOn="{StaticResource HeadingBase}"
         TargetType="Label">
-        <Setter Property="TextColor" Value="Black" />
+        <Setter Property="TextColor" Value="{AppThemeBinding Light=Black, Dark={StaticResource Gray200}}" />
     </Style>
 
     <Style
@@ -61,7 +61,7 @@
     </Style>
 
     <Style x:Key="BorderStyle" TargetType="Border">
-        <Setter Property="Stroke" Value="black" />
+        <Setter Property="Stroke" Value="{AppThemeBinding Light=Black, Dark={StaticResource White}}" />
         <Setter Property="StrokeShape" Value="RoundRectangle 5" />
         <Setter Property="StrokeThickness" Value="1" />
     </Style>
@@ -83,7 +83,7 @@
     </Style>
 
     <Style x:Key="BorderDotStyle" TargetType="Border">
-        <Setter Property="Stroke" Value="black" />
+        <Setter Property="Stroke" Value="{AppThemeBinding Light=Black, Dark={StaticResource White}}" />
         <Setter Property="Margin" Value="0,5,0,0" />
         <Setter Property="StrokeThickness" Value="1" />
         <Setter Property="StrokeDashArray" Value="3,3" />
@@ -96,7 +96,7 @@
     </Style>
 
     <Style x:Key="ToleranceText" TargetType="Label">
-        <Setter Property="TextColor" Value="#000000" />
+        <Setter Property="TextColor" Value="{AppThemeBinding Light=Black, Dark={StaticResource White}}" />
         <Setter Property="FontFamily" Value="OpenSansRegular" />
         <Setter Property="FontSize" Value="24" />
     </Style>

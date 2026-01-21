@@ -48,7 +48,8 @@
                     </Entry>
                     <Image
                         Grid.Column="1"
-                        Source="camera.png"
+                        Source="{AppThemeBinding Light='camera.png',
+                                                 Dark='camera_light.png'}"
                         VerticalOptions="Center">
                         <Image.GestureRecognizers>
                             <TapGestureRecognizer Command="{Binding ScanCommand}" />

@@ -4,9 +4,9 @@ namespace AppShoppingCenter.Views.Tickets;
 
 public partial class TicketScanPage : ContentPage
 {
-    public TicketScanPage(TicketScanViewModel vm)
+    public TicketScanPage(TicketScanViewModel viewModel)
     {
         InitializeComponent();
-        BindingContext = vm;
+        BindingContext = viewModel;
     }
 }

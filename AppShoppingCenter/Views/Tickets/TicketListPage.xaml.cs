@@ -4,9 +4,9 @@ namespace AppShoppingCenter.Views.Tickets;
 
 public partial class TicketListPage : ContentPage
 {
-    public TicketListPage(TicketListViewModel vm)
+    public TicketListPage(TicketListViewModel viewModel)
     {
         InitializeComponent();
-        BindingContext = vm;
+        BindingContext = viewModel;
     }
 }
